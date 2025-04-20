@@ -1,13 +1,21 @@
 <?php
-try {
-    $host = 'localhost';
-    $dbname = 'pvc_store';
-    $username = 'root';
-    $password = '';
+class Database {
+    private $host = 'localhost';
+    private $dbname = 'pvc_store';
+    private $username = 'root';
+    private $password = '';
+    private $conn = null;
 
-    $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-} catch(PDOException $e) {
-    die("Connection failed: " . $e->getMessage());
+    public function connect() {
+        try {
+            if ($this->conn === null) {
+                $this->conn = new PDO("mysql:host={$this->host};dbname={$this->dbname}", $this->username, $this->password);
+                $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                $this->conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+            }
+            return $this->conn;
+        } catch(PDOException $e) {
+            die("Connection failed: " . $e->getMessage());
+        }
+    }
 }

@@ -2,6 +2,10 @@
 require_once 'includes/config.php';
 require_once 'includes/database.php';
 
+// Initialize database connection
+$db = new Database();
+$conn = $db->connect();
+
 // Fetch one featured product from each category
 $sql = "SELECT DISTINCT p.* 
         FROM products p 
