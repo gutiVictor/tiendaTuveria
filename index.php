@@ -57,7 +57,7 @@ $featured_products = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <?php foreach ($featured_products as $product): ?>
                     <div class="col-md-4 col-lg-3 mb-4">
                         <div class="card h-100">
-                            <img src="assets/images/products/<?php echo htmlspecialchars($product['image']); ?>" 
+                            <img src="<?php echo htmlspecialchars($product['image_url']); ?>" 
                                  class="card-img-top" 
                                  alt="<?php echo htmlspecialchars($product['name']); ?>">
                             <div class="card-body">
