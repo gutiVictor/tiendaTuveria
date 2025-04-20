@@ -9,7 +9,7 @@ if (!isset($_SESSION['admin_id'])) {
     exit();
 }
 
-$db = new Database();
+$db = new $dbname ;
 $conn = $db->connect();
 
 $error = '';
