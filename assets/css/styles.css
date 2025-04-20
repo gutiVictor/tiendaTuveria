@@ -33,18 +33,27 @@ body {
 }
 
 .card {
-    border: none;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.2s;
+    border: 1px solid rgba(0,0,0,0.125);
 }
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .card-img-top {
     height: 200px;
     object-fit: cover;
+}
+
+.card-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-text {
+    font-size: 0.9rem;
 }
 
 .btn-primary {
