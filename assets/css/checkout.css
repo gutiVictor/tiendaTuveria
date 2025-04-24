@@ -99,6 +99,36 @@
     transition: background-color 0.2s;
 }
 
+/* Payment form styles */
+.form-row {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.col-md-4 {
+    flex: 1;
+}
+
+/* Card input styles */
+input[name="card_number"],
+input[name="card_exp_month"],
+input[name="card_exp_year"],
+input[name="card_cvv"] {
+    font-family: monospace;
+    letter-spacing: 0.5px;
+}
+
+/* Payment section header */
+.checkout-form h3 {
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    color: #333;
+    font-size: 1.25rem;
+}
+
 .btn-confirm:hover {
     background: #218838;
 }
