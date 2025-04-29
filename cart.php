@@ -66,12 +66,15 @@ foreach ($_SESSION['cart'] as $item) {
 }
 ?>
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrito de Compras - <?php echo SITE_NAME; ?></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
 </head>
 <body>
     <header>
@@ -147,8 +150,49 @@ foreach ($_SESSION['cart'] as $item) {
         <?php endif; ?>
     </main>
 
-    <footer>
-        <p>&copy; <?php echo date('Y'); ?> <?php echo SITE_NAME; ?></p>
+    <footer class="container-fluid py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 footer-column">
+                    <h5>Tienda de PVC</h5>
+                    <p>Tu proveedor confiable de materiales de PVC y productos para almacenamiento de agua.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4 footer-column">
+                    <h5>Enlaces Rápidos</h5>
+                    <ul>
+                        <li><a href="index.php">Inicio</a></li>
+                        <li><a href="products.php">Productos</a></li>
+                        <li><a href="cart.php">Carrito</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 footer-column">
+                    <h5>Contacto</h5>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> (123) 456-7890</li>
+                        <li><i class="fas fa-envelope"></i> info@tiendapvc.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Calle Principal #123</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-12 text-center">
+                    <p class="copyright">&copy; <?php echo date('Y'); ?> <?php echo SITE_NAME; ?>. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div>
     </footer>
+
+    <button class="theme-toggle" onclick="toggleTheme()">
+        <i class="fas fa-moon"></i>
+        <span>Cambiar Tema</span>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/theme.js"></script>
 </body>
 </html>
